@@ -1,14 +1,12 @@
 The Ruby Timeout Gem
 ====================
 
-Ruby provides `timeout.rb` in its standard library. It provides an elegant API
-for timeouts. Unfortunately, it provides only one, nasty backend
-implementation with dangerous semantics on any Ruby VM which isn't MRI.
+The Timeout Gem is an extension of Ruby's `timeout.rb` API with support for
+multiple timeout backends which can be used on a pick-and-choose basis.
 
-The Timeout Gem attempts to resolve this problem by providing pluggable timeout
-implementations which can potentially implement safe timeout semantics by
-selectively hooking into backend schedulers rather than resorting to running
-code in a separate thread to implement timeouts.
+It supports pluggable timeout implementations which can selectively hook
+into multiple backend schedulers rather than resorting to running code in a
+separate thread to implement timeouts when there's a better backend available.
 
 ## Installation
 
