@@ -8,9 +8,7 @@ describe Timeout::Extensions do
     context "inside and outside of actor" do
       it "hits the proper timeout handler" do
         within_actor do
-          Thread.enhance_for_concurrency! do |t|
-            t.timeout_handler = dummy_timeout
-          end
+          Thread.current.timeout_handler = dummy_timeout
           expect(dummy_timeout).to receive(:call).with(2, exception, &action)
           timeout(2, exception, &action)
         end
@@ -25,9 +23,7 @@ describe Timeout::Extensions do
     context "inside and outside of actor" do
       it "hits the proper sleep handler" do
         within_actor do
-          Thread.enhance_for_concurrency! do |t|
-            t.sleep_handler = dummy_sleep
-          end
+          Thread.current.sleep_handler = dummy_sleep
           expect(dummy_sleep).to receive(:call).with(2)
           sleep(2)
         end

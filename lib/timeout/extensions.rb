@@ -1,13 +1,8 @@
 require 'timeout/version'
-require 'timeout/extensions'
 
 class Thread
   attr_accessor :timeout_handler
   attr_accessor :sleep_handler
-
-  def self.enhance_for_concurrency!
-    yield Thread.current if block_given?
-  end
 end
 
 module Timeout::Extensions
@@ -48,4 +43,3 @@ end
 
 Timeout.extend Timeout::Extensions
 include Kernel::Extensions
-
