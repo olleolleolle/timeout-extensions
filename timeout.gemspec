@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'timeout/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "timeout"
+  spec.name          = "timeout-extensions"
   spec.version       = Timeout::VERSION
   spec.authors       = ["Tony Arcieri", "Tiago Cardoso"]
   spec.email         = ["bascule@gmail.com"]
