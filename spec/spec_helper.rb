@@ -17,8 +17,9 @@ class Celluloid::Actor
   # Important that these two are left out, or else
   # timeout calls inside the actor scope will never propagate
   # to the proper extensions
-  undef_method :timeout
-  undef_method :sleep
+  # TODO: eventually remove this if celluloid adopts the gem
+  undef_method :timeout if instance_methods(false).include?(:timeout)
+  undef_method :sleep if instance_methods(false).include?(:sleep)
 end
 
 
