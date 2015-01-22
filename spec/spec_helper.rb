@@ -31,11 +31,8 @@ RSpec.configure do |config|
 
   config.before do
     Celluloid.logger = logger
-    if Celluloid.running?
-      Celluloid.shutdown
-      sleep 0.01
-      Celluloid.internal_pool.assert_inactive
-    end
+    Celluloid.shutdown
+    sleep 0.01
 
     Celluloid.boot
 
