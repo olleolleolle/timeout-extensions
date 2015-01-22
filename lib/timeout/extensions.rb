@@ -1,4 +1,4 @@
-require 'timeout/version'
+require 'timeout/extensions/version'
 
 class Thread
   attr_accessor :timeout_handler

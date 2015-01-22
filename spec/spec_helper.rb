@@ -3,6 +3,7 @@ require 'bundler/setup'
 require 'logger'
 require 'timeout'
 require 'timeout/extensions'
+require 'celluloid/autostart'
 require 'celluloid/rspec'
 
 logfile = File.open(File.expand_path("../../log/test.log", __FILE__), 'a')
