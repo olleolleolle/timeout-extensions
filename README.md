@@ -1,8 +1,8 @@
-The Ruby Timeout Gem
-====================
+Timeout::Extensions
+===================
 
-The Timeout Gem is an extension of Ruby's `timeout.rb` API with support for
-multiple timeout backends which can be used on a pick-and-choose basis.
+The Timeout::Extensions Gem augments Ruby's `timeout.rb` API with support for
+multiple timeout backends which can be mixed and matched within a single app.
 
 It supports pluggable timeout implementations which can selectively hook
 into multiple backend schedulers rather than resorting to running code in a
@@ -12,7 +12,7 @@ separate thread to implement timeouts when there's a better backend available.
 
 Add this line to your application's Gemfile:
 
-    gem 'timeout'
+    gem 'timeout-extensions'
 
 And then execute:
 
@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-The Ruby Timeout Gem implements extensions to the Ruby standard library's
+The Timeout::Extensions gem enhances the Ruby standard library's
 `timeout.rb` API:
 
 ```ruby
@@ -80,5 +80,5 @@ end
 
 # License
 
-Copyright (c) 2014 Tony Arcieri. Distributed under the MIT License. See
-LICENSE.txt for further details.
+Copyright (c) 2014-2015 Tony Arcieri, Tiago Cardoso
+Distributed under the MIT License. See LICENSE.txt for further details.
