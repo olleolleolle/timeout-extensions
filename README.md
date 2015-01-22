@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install timeout
+    $ gem install timeout-extensions
 
 ## Usage
 
