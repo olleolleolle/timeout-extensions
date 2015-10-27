@@ -7,7 +7,7 @@ describe Timeout::Extensions do
     let(:action) { Proc.new{ |t|  } }
     context "inside and outside of actor" do
       it "hits the proper timeout handler" do
-        within_actor do
+        within_thread do
           Thread.current.timeout_handler = dummy_timeout
           expect(dummy_timeout).to receive(:call).with(2, exception, &action)
           timeout(2, exception, &action)
@@ -22,7 +22,7 @@ describe Timeout::Extensions do
     let(:dummy_sleep) { double(:meta_sleep) }
     context "inside and outside of actor" do
       it "hits the proper sleep handler" do
-        within_actor do
+        within_thread do
           Thread.current.sleep_handler = dummy_sleep
           expect(dummy_sleep).to receive(:call).with(2)
           sleep(2)
