@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "A timeout extension for Ruby which plugs into multiple timeout backends"
   spec.homepage      = "https://github.com/celluloid/timeout-extensions"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 2.0.0"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -19,7 +20,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rake", 		"~> 10.4.2"
-  spec.add_development_dependency "pry",		"~> 0.10.1"
-  spec.add_development_dependency "rspec", 	 	"~> 2.14.0"
-  spec.add_development_dependency "celluloid",  ">= 0.16.0"
+  spec.add_development_dependency "pry",   		"~> 0.10.1"
+  spec.add_development_dependency "rspec", 	 	"~> 3.4.0"
 end
