@@ -1,6 +1,11 @@
 Timeout::Extensions
 ===================
 
+[![Gem Version](https://badge.fury.io/rb/timeout-extensions.svg)](http://rubygems.org/gems/timeout-extensions)
+[![Build Status](https://secure.travis-ci.org/celluloid/timeout-extensions.svg?branch=master)](http://travis-ci.org/celluloid/timeout-extensions)
+[![Code Climate](https://codeclimate.com/github/celluloid/timeout-extensions.svg)](https://codeclimate.com/github/celluloid/timeout-extensions)
+[![Coverage Status](https://coveralls.io/repos/celluloid/timeout-extensions/badge.svg?branch=master)](https://coveralls.io/r/celluloid/timeout-extensions)
+
 The Timeout::Extensions Gem augments Ruby's `timeout.rb` API with support for
 multiple timeout backends which can be mixed and matched within a single app.
 

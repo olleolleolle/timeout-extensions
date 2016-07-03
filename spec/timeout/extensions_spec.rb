@@ -1,10 +1,10 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe Timeout::Extensions do
   describe ".timeout" do
     let(:dummy_timeout) { double(:meta_timeout) }
     let(:exception) { double(:exception) }
-    let(:action) { Proc.new{ |t|  } }
+    let(:action) { proc { |t| } }
     context "inside and outside of thread" do
       it "hits the proper timeout handler" do
         within_thread do
@@ -27,5 +27,5 @@ RSpec.describe Timeout::Extensions do
         end
       end
     end
-  end 
+  end
 end

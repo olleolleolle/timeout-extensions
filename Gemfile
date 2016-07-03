@@ -1,5 +1,12 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Specify your gem's dependencies in timeout.gemspec
 gemspec
 
+group :development, :test do
+  gem "rake"
+end
+
+group :test do
+  gem "rspec", "~> 3", require: false
+  gem "rubocop", "0.41.1", require: false
+end
