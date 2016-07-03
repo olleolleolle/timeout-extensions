@@ -75,6 +75,18 @@ Timeout.backend(MyTimeoutThingy) do
 end
 ```
 
+## Supported Ruby Versions
+
+This library aims to support and is [tested against][travis] the following Ruby
+versions:
+
+* Ruby 2.1
+* Ruby 2.2
+* Ruby 2.3
+* JRuby 9.1
+
+If something doesn't work on one of these versions, it's a bug.
+
 # Contributing
 
 * Fork this repository on github
