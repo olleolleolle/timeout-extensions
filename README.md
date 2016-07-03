@@ -84,5 +84,5 @@ end
 
 # License
 
-Copyright (c) 2014-2015 Tony Arcieri, Tiago Cardoso
+Copyright (c) 2014-2016 Tony Arcieri, Tiago Cardoso
 Distributed under the MIT License. See LICENSE.txt for further details.
