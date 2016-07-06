@@ -50,7 +50,6 @@ module Timeout::Extensions
   ::Object.prepend KernelMethods
 end
 
-
 module Timeout
   def self.backend(handler)
     default_handler = Thread.current.timeout_handler

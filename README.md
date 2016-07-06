@@ -43,7 +43,8 @@ However, where `timeout.rb` provides one implementation, the Timeout Gem
 provides support for multiple, swappable backends:
 
 ```ruby
-require 'timeout/extensions'
+# examples/even_odd.rb
+require "timeout/extensions"
 
 module MyAwesomeJob
   def self.perform
@@ -109,7 +110,8 @@ This gem provides celluloid support out of the box.
 Celluloid has its own actor timeout and sleep methods, which are implemented using the ```timer``` gem and do not block its mailbox. These have to be called inside your celluloid actor context however, thereby limiting the scope of your code:
 
 ```ruby
-require 'celluloid'
+# examples/celluloid.rb
+require "celluloid"
 
 module MyJob
   def self.perform

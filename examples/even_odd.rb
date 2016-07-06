@@ -1,6 +1,6 @@
-require 'timeout/extensions'
+require "timeout/extensions"
 
-module MyAwesomeJob 
+module MyAwesomeJob
   def self.perform
     timeout(2) do
       sleep 3 # perform incredibly heavy job
@@ -18,11 +18,9 @@ module MyOwnTimeout
   end
 end
 
-
-5.times.map do |i|
+Array(5.times).map do |i|
   Thread.start do
     Thread.current.timeout_handler = MyOwnTimeout if i.odd?
     MyAwesomeJob.perform
   end
 end.map(&:join)
-
