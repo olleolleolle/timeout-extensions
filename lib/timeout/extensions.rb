@@ -1,4 +1,5 @@
 require "timeout/extensions/version"
+require "timeout"
 
 # Core extensions to Thread
 #
