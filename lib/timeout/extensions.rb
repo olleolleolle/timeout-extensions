@@ -49,3 +49,16 @@ module Timeout::Extensions
   #
   ::Object.prepend KernelMethods
 end
+
+
+module Timeout
+  def self.backend(handler)
+    default_handler = Thread.current.timeout_handler
+    begin
+      Thread.current.timeout_handler = handler
+      yield
+    ensure
+      Thread.current.timeout_handler = default_handler
+    end
+  end
+end
