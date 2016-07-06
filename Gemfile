@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gemspec
 
+gem "celluloid"
+
 group :development, :test do
   gem "rake"
 end
