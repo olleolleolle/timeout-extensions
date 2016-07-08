@@ -1,13 +1,19 @@
 require "timeout/extensions"
 require "celluloid"
 module Celluloid
-  # Reopening the thread class to define the time handlers and pointing them to celluloid respective methodsx
-  class Thread < ::Thread
-    def initialize(*)
-      self.timeout_handler = Celluloid.method(:timeout).to_proc
-      self.sleep_handler = Celluloid.method(:sleep).to_proc
-      super
+  module TimeoutExtensions
+    def timeout_handler
+      @timeout_handler ||= Celluloid.method(:timeout)
     end
+    def sleep_handler
+      @sleep_handler ||= Celluloid.method(:sleep)
+    end
+  end
+
+
+  # Reopening the thread class to define the time handlers and pointing them to celluloid respective methodsx
+  class Thread
+    include TimeoutExtensions
   end
 
   ####################
