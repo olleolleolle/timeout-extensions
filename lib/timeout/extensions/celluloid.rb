@@ -5,11 +5,11 @@ module Celluloid
     def timeout_handler
       @timeout_handler ||= Celluloid.method(:timeout)
     end
+
     def sleep_handler
       @sleep_handler ||= Celluloid.method(:sleep)
     end
   end
-
 
   # Reopening the thread class to define the time handlers and pointing them to celluloid respective methodsx
   class Thread
